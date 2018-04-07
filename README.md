@@ -1,4 +1,4 @@
-# Nori
+# Nori (海苔)
 
 A small lightweight HTTP client built using SwiftNIO.
 

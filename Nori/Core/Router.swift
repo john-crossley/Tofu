@@ -27,3 +27,12 @@ open class Router {
         next!()
     }
 }
+
+public extension Router {
+    public func get(_ path: String, middleware: @escaping Middleware) {
+        use { req, res, next in
+            guard req.header.method == .GET, req.header.uri.hasPrefix(path) else { return next() }
+            middleware(req, res, next)
+        }
+    }
+}
