@@ -7,6 +7,7 @@ import NIO
 import NIOHTTP1
 
 let app = Nori()
+app.use(cors(allowOrigin: "*"))
 
 app.use { (req, res, next) in
     print("[NORI] \(req.header.method):", req.header.uri)
