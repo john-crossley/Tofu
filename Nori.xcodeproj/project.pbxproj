@@ -17,6 +17,8 @@
 		9A06CF662078EAB1003CEA44 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF652078EAB1003CEA44 /* Food.swift */; };
 		9A06CF692078EB5C003CEA44 /* ServerResponse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF682078EB5C003CEA44 /* ServerResponse+Extensions.swift */; };
 		9A06CF6B2078EF73003CEA44 /* Cors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF6A2078EF73003CEA44 /* Cors.swift */; };
+		9A06CF6D2078F144003CEA44 /* FS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF6C2078F144003CEA44 /* FS.swift */; };
+		9A06CF7320790074003CEA44 /* TemplateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF7220790074003CEA44 /* TemplateParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		9A06CF652078EAB1003CEA44 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		9A06CF682078EB5C003CEA44 /* ServerResponse+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServerResponse+Extensions.swift"; sourceTree = "<group>"; };
 		9A06CF6A2078EF73003CEA44 /* Cors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cors.swift; sourceTree = "<group>"; };
+		9A06CF6C2078F144003CEA44 /* FS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FS.swift; sourceTree = "<group>"; };
+		9A06CF6F2078F5B8003CEA44 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		9A06CF702078F84A003CEA44 /* 404.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = 404.html; sourceTree = "<group>"; };
+		9A06CF7220790074003CEA44 /* TemplateParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 		9A06CF4D2078D12E003CEA44 /* Nori */ = {
 			isa = PBXGroup;
 			children = (
+				9A06CF6E2078F5A3003CEA44 /* Views */,
 				9A06CF642078EA98003CEA44 /* Models */,
 				9A06CF5C2078DAD2003CEA44 /* Core */,
 				9A06CF4E2078D12E003CEA44 /* main.swift */,
@@ -75,12 +82,14 @@
 		9A06CF5C2078DAD2003CEA44 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9A06CF7120790068003CEA44 /* Parser */,
 				9A06CF632078E48F003CEA44 /* Middleware */,
 				9A06CF672078EB48003CEA44 /* Extensions */,
 				9A06CF562078D14B003CEA44 /* Nori.swift */,
 				9A06CF582078D8BD003CEA44 /* IncomingMessage.swift */,
 				9A06CF5A2078D939003CEA44 /* ServerResponse.swift */,
 				9A06CF5F2078DCA7003CEA44 /* Router.swift */,
+				9A06CF6C2078F144003CEA44 /* FS.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -109,6 +118,23 @@
 				9A06CF682078EB5C003CEA44 /* ServerResponse+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9A06CF6E2078F5A3003CEA44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A06CF6F2078F5B8003CEA44 /* index.html */,
+				9A06CF702078F84A003CEA44 /* 404.html */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9A06CF7120790068003CEA44 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				9A06CF7220790074003CEA44 /* TemplateParser.swift */,
+			);
+			path = Parser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +218,8 @@
 				9A06CF602078DCA7003CEA44 /* Router.swift in Sources */,
 				9A06CF662078EAB1003CEA44 /* Food.swift in Sources */,
 				9A06CF692078EB5C003CEA44 /* ServerResponse+Extensions.swift in Sources */,
+				9A06CF6D2078F144003CEA44 /* FS.swift in Sources */,
+				9A06CF7320790074003CEA44 /* TemplateParser.swift in Sources */,
 				9A06CF622078E465003CEA44 /* QueryString.swift in Sources */,
 				9A06CF6B2078EF73003CEA44 /* Cors.swift in Sources */,
 				9A06CF572078D14B003CEA44 /* Nori.swift in Sources */,

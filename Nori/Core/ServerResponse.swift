@@ -54,6 +54,49 @@ open class ServerResponse {
             .map { self.end() }
     }
 
+    public func render(pathContext: String = #file, _ template: String, _ replacements: [String: String] = [:]) {
+        let res = self
+
+        // read the file
+        guard let path = self.path(to: template, ofType: "html", in: pathContext) else {
+            fatalError("[NORI] - Unable to locate file: \(template)")
+        }
+
+        FS.read(path) { err, data in
+            guard let data = data, let template = String(data: data, encoding: .utf8) else {
+                res.status = .internalServerError
+                return res.send("[NORI] - Error: \(err as Optional)")
+            }
+
+            // Temp template parser
+            let body = TemplateParser { parser in
+                parser.replacements = replacements
+                parser.template = template
+            }
+
+            res["Content-Type"] = "text/html"
+            res.send(body.build())
+        }
+    }
+
+    //
+    // This is rank
+    //
+    private func path(to resource: String, ofType: String, in pathContext: String) -> URL? {
+        #if os(iOS) && !arch(x86_64) // iOS support, blocking
+        return Bundle.main.url(forResource: resource, withExtension: "html")
+        #else
+        var url = URL(fileURLWithPath: pathContext)
+        url.deleteLastPathComponent()
+        url.deleteLastPathComponent()
+        url.deleteLastPathComponent()
+        url.appendPathComponent("Views", isDirectory: true)
+        url.appendPathComponent(resource)
+        url.appendPathExtension("html")
+        return url
+        #endif
+    }
+
     private func flushHeader() {
         guard !didWriteHeader else { return }
         didWriteHeader = true

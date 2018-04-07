@@ -6,6 +6,10 @@ import Foundation
 import NIO
 import NIOHTTP1
 
+// Create a multithread event loop, think of this as dispatchQueue.
+// This handles IO events.. (DispatchQueue.async)
+let loopGroup = MultiThreadedEventLoopGroup(numThreads: System.coreCount)
+
 open class Nori: Router {
 
     override init() {
@@ -39,10 +43,6 @@ open class Nori: Router {
             }
         }
     }
-
-    // Create a multithread event loop, think of this as dispatchQueue.
-    // This handles IO events.. (DispatchQueue.async)
-    let loopGroup = MultiThreadedEventLoopGroup(numThreads: System.coreCount)
 
     open func listen(_ port: Int) {
         let reuseAddrOpt = ChannelOptions.socket(SocketOptionLevel(SOL_SOCKET), SO_REUSEADDR)

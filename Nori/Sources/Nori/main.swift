@@ -14,6 +14,10 @@ app.use { (req, res, next) in
     next()
 }
 
+app.get("/read") { (req, res, next) in
+    res.render("index", ["title": "Hello, World!"])
+}
+
 app.get("/food") { (_, res, _) in
     let itemsOfFood = [
         Food(id: 0, name: "Nori", description: "Nori (海苔) is the Japanese name for edible seaweed species of the red algae genus Pyropia"),
