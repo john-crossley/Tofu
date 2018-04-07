@@ -26,8 +26,32 @@ open class ServerResponse {
 
         let part = HTTPServerResponsePart.body(.byteBuffer(buffer))
         _ = channel.writeAndFlush(part)
-                .mapIfError(handleError)
-                .map { self.end() }
+            .mapIfError(handleError)
+            .map { self.end() }
+    }
+
+    func json<T: Codable>(_ model: T) {
+        let data: Data
+
+        do {
+            data = try JSONEncoder().encode(model)
+        } catch {
+            return handleError(error)
+        }
+
+        // Setup JSON headers
+        self["Content-Type"] = "application/json"
+        self["Content-Length"] = "\(data.count)"
+
+        // send the headers and the data
+        flushHeader()
+
+        var buffer = channel.allocator.buffer(capacity: data.count)
+        buffer.write(bytes: data)
+        let part = HTTPServerResponsePart.body(.byteBuffer(buffer))
+        _ = channel.writeAndFlush(part)
+            .mapIfError(handleError)
+            .map { self.end() }
     }
 
     private func flushHeader() {

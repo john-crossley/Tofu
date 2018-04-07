@@ -14,6 +14,8 @@
 		9A06CF5E2078DC5F003CEA44 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF5D2078DC5F003CEA44 /* Middleware.swift */; };
 		9A06CF602078DCA7003CEA44 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF5F2078DCA7003CEA44 /* Router.swift */; };
 		9A06CF622078E465003CEA44 /* QueryString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF612078E465003CEA44 /* QueryString.swift */; };
+		9A06CF662078EAB1003CEA44 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF652078EAB1003CEA44 /* Food.swift */; };
+		9A06CF692078EB5C003CEA44 /* ServerResponse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF682078EB5C003CEA44 /* ServerResponse+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		9A06CF5D2078DC5F003CEA44 /* Middleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
 		9A06CF5F2078DCA7003CEA44 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		9A06CF612078E465003CEA44 /* QueryString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryString.swift; sourceTree = "<group>"; };
+		9A06CF652078EAB1003CEA44 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		9A06CF682078EB5C003CEA44 /* ServerResponse+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServerResponse+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 		9A06CF4D2078D12E003CEA44 /* Nori */ = {
 			isa = PBXGroup;
 			children = (
+				9A06CF632078E48F003CEA44 /* Middleware */,
+				9A06CF642078EA98003CEA44 /* Models */,
 				9A06CF5C2078DAD2003CEA44 /* Core */,
 				9A06CF4E2078D12E003CEA44 /* main.swift */,
 				9A06CF502078D12E003CEA44 /* Package.swift */,
@@ -68,7 +74,7 @@
 		9A06CF5C2078DAD2003CEA44 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				9A06CF632078E48F003CEA44 /* Middleware */,
+				9A06CF672078EB48003CEA44 /* Extensions */,
 				9A06CF562078D14B003CEA44 /* Nori.swift */,
 				9A06CF582078D8BD003CEA44 /* IncomingMessage.swift */,
 				9A06CF5A2078D939003CEA44 /* ServerResponse.swift */,
@@ -84,6 +90,22 @@
 				9A06CF612078E465003CEA44 /* QueryString.swift */,
 			);
 			path = Middleware;
+			sourceTree = "<group>";
+		};
+		9A06CF642078EA98003CEA44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9A06CF652078EAB1003CEA44 /* Food.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9A06CF672078EB48003CEA44 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9A06CF682078EB5C003CEA44 /* ServerResponse+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +187,8 @@
 				9A06CF5B2078D939003CEA44 /* ServerResponse.swift in Sources */,
 				9A06CF4F2078D12E003CEA44 /* main.swift in Sources */,
 				9A06CF602078DCA7003CEA44 /* Router.swift in Sources */,
+				9A06CF662078EAB1003CEA44 /* Food.swift in Sources */,
+				9A06CF692078EB5C003CEA44 /* ServerResponse+Extensions.swift in Sources */,
 				9A06CF622078E465003CEA44 /* QueryString.swift in Sources */,
 				9A06CF572078D14B003CEA44 /* Nori.swift in Sources */,
 			);
