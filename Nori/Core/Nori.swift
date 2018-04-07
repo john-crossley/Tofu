@@ -6,20 +6,30 @@ import Foundation
 import NIO
 import NIOHTTP1
 
-open class Nori {
+open class Nori: Router {
 
     final class HttpHandler: ChannelInboundHandler {
         typealias InboundIn = HTTPServerRequestPart
+
+        let router: Router
+
+        init(router: Router) {
+            self.router = router
+        }
 
         func channelRead(ctx: ChannelHandlerContext, data: NIOAny) {
             let reqPart = unwrapInboundIn(data)
 
             switch reqPart {
             case .head(let header):
-                let request = IncomingMessage(header: header)
-                let response = ServerResponse(channel: ctx.channel)
-                print("[NORI] Request: ", header.method, header.uri)
-                response.send("Hello, mother fucker!")
+                let req = IncomingMessage(header: header)
+                let res = ServerResponse(channel: ctx.channel)
+
+                router.handle(request: req, response: res) { (items: Any...) in
+                    res.status = .notFound
+                    res.send("[NORI] No middleware handled the request!")
+                }
+
             case .body, .end: break
             }
         }
@@ -39,7 +49,7 @@ open class Nori {
 
             .childChannelInitializer { channel in
                 channel.pipeline.configureHTTPServerPipeline().then {
-                    channel.pipeline.add(handler: HttpHandler())
+                    channel.pipeline.add(handler: HttpHandler(router: self))
                 }
             }
 
