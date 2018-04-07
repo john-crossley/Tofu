@@ -20,5 +20,10 @@ app.get("/") { _, res, _ in
     res.send("Hey, you little fuggle face!")
 }
 
+app.get("/queryparams") { req, res, _ in
+    let name = req.param("name") ?? "John Crossley"
+    res.send("Hello \(name), I have completed the request.")
+}
+
 app.listen(1337)
 ```
