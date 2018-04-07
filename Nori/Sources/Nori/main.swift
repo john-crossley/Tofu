@@ -8,14 +8,14 @@ import NIOHTTP1
 
 let app = Nori()
 
-// Logging
 app.use { (req, res, next) in
     print("[NORI] \(req.header.method):", req.header.uri)
     next()
 }
 
-app.get("/") { _, res, _ in
-    res.send("Hey, you little fuggle face!")
+app.get("/") { req, res, _ in
+    let name = req.param("name") ?? "John Crossley"
+    res.send("Hello \(name), I have completed the request.")
 }
 
 app.listen(1337)

@@ -13,6 +13,7 @@
 		9A06CF5B2078D939003CEA44 /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF5A2078D939003CEA44 /* ServerResponse.swift */; };
 		9A06CF5E2078DC5F003CEA44 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF5D2078DC5F003CEA44 /* Middleware.swift */; };
 		9A06CF602078DCA7003CEA44 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF5F2078DCA7003CEA44 /* Router.swift */; };
+		9A06CF622078E465003CEA44 /* QueryString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF612078E465003CEA44 /* QueryString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9A06CF5A2078D939003CEA44 /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
 		9A06CF5D2078DC5F003CEA44 /* Middleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
 		9A06CF5F2078DCA7003CEA44 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		9A06CF612078E465003CEA44 /* QueryString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +68,22 @@
 		9A06CF5C2078DAD2003CEA44 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9A06CF632078E48F003CEA44 /* Middleware */,
 				9A06CF562078D14B003CEA44 /* Nori.swift */,
 				9A06CF582078D8BD003CEA44 /* IncomingMessage.swift */,
 				9A06CF5A2078D939003CEA44 /* ServerResponse.swift */,
-				9A06CF5D2078DC5F003CEA44 /* Middleware.swift */,
 				9A06CF5F2078DCA7003CEA44 /* Router.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		9A06CF632078E48F003CEA44 /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				9A06CF5D2078DC5F003CEA44 /* Middleware.swift */,
+				9A06CF612078E465003CEA44 /* QueryString.swift */,
+			);
+			path = Middleware;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +165,7 @@
 				9A06CF5B2078D939003CEA44 /* ServerResponse.swift in Sources */,
 				9A06CF4F2078D12E003CEA44 /* main.swift in Sources */,
 				9A06CF602078DCA7003CEA44 /* Router.swift in Sources */,
+				9A06CF622078E465003CEA44 /* QueryString.swift in Sources */,
 				9A06CF572078D14B003CEA44 /* Nori.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

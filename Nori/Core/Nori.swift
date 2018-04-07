@@ -8,6 +8,11 @@ import NIOHTTP1
 
 open class Nori: Router {
 
+    override init() {
+        super.init()
+        use(queryString)
+    }
+
     final class HttpHandler: ChannelInboundHandler {
         typealias InboundIn = HTTPServerRequestPart
 
