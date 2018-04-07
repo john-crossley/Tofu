@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		9A06CF4F2078D12E003CEA44 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF4E2078D12E003CEA44 /* main.swift */; };
+		9A06CF572078D14B003CEA44 /* Nori.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF562078D14B003CEA44 /* Nori.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9A06CF4B2078D12E003CEA44 /* Nori */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Nori; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A06CF4E2078D12E003CEA44 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = Sources/Nori/main.swift; sourceTree = "<group>"; };
 		9A06CF502078D12E003CEA44 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		9A06CF562078D14B003CEA44 /* Nori.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nori.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 			children = (
 				9A06CF4E2078D12E003CEA44 /* main.swift */,
 				9A06CF502078D12E003CEA44 /* Package.swift */,
+				9A06CF562078D14B003CEA44 /* Nori.swift */,
 			);
 			path = Nori;
 			sourceTree = "<group>";
@@ -127,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A06CF4F2078D12E003CEA44 /* main.swift in Sources */,
+				9A06CF572078D14B003CEA44 /* Nori.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
