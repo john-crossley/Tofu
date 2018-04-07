@@ -36,5 +36,9 @@ app.get("/food") { (_, res, _) in
     res.json(itemsOfFood)
 }
 
+app.get("/read") { (req, res, next) in
+    res.render("index", ["title": "Hello, World!"])
+}
+
 app.listen(1337)
 ```
