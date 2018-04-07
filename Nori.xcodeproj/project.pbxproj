@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9A06CF4F2078D12E003CEA44 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF4E2078D12E003CEA44 /* main.swift */; };
 		9A06CF572078D14B003CEA44 /* Nori.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF562078D14B003CEA44 /* Nori.swift */; };
+		9A06CF592078D8BD003CEA44 /* IncomingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF582078D8BD003CEA44 /* IncomingMessage.swift */; };
+		9A06CF5B2078D939003CEA44 /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06CF5A2078D939003CEA44 /* ServerResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +18,8 @@
 		9A06CF4E2078D12E003CEA44 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = Sources/Nori/main.swift; sourceTree = "<group>"; };
 		9A06CF502078D12E003CEA44 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		9A06CF562078D14B003CEA44 /* Nori.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nori.swift; sourceTree = "<group>"; };
+		9A06CF582078D8BD003CEA44 /* IncomingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingMessage.swift; sourceTree = "<group>"; };
+		9A06CF5A2078D939003CEA44 /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,11 +52,21 @@
 		9A06CF4D2078D12E003CEA44 /* Nori */ = {
 			isa = PBXGroup;
 			children = (
+				9A06CF5C2078DAD2003CEA44 /* Core */,
 				9A06CF4E2078D12E003CEA44 /* main.swift */,
 				9A06CF502078D12E003CEA44 /* Package.swift */,
-				9A06CF562078D14B003CEA44 /* Nori.swift */,
 			);
 			path = Nori;
+			sourceTree = "<group>";
+		};
+		9A06CF5C2078DAD2003CEA44 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9A06CF562078D14B003CEA44 /* Nori.swift */,
+				9A06CF582078D8BD003CEA44 /* IncomingMessage.swift */,
+				9A06CF5A2078D939003CEA44 /* ServerResponse.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A06CF592078D8BD003CEA44 /* IncomingMessage.swift in Sources */,
+				9A06CF5B2078D939003CEA44 /* ServerResponse.swift in Sources */,
 				9A06CF4F2078D12E003CEA44 /* main.swift in Sources */,
 				9A06CF572078D14B003CEA44 /* Nori.swift in Sources */,
 			);

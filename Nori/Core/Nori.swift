@@ -16,21 +16,10 @@ open class Nori {
 
             switch reqPart {
             case .head(let header):
-
-                let head = HTTPResponseHead(version: header.version, status: .ok)
-                let part = HTTPServerResponsePart.head(head)
-                _ = ctx.channel.write(part)
-
-                var buffer = ctx.channel.allocator.buffer(capacity: 42)
-                buffer.write(string: "Hello, World!")
-                let bodypart = HTTPServerResponsePart.body(.byteBuffer(buffer))
-                _ = ctx.channel.write(bodypart)
-
-                let endpart = HTTPServerResponsePart.end(nil)
-                _ = ctx.channel.writeAndFlush(endpart).then {
-                    ctx.channel.close()
-                }
-
+                let request = IncomingMessage(header: header)
+                let response = ServerResponse(channel: ctx.channel)
+                print("[NORI] Request: ", header.method, header.uri)
+                response.send("Hello, mother fucker!")
             case .body, .end: break
             }
         }
